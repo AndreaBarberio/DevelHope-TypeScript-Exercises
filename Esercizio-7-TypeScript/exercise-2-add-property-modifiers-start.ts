@@ -8,13 +8,13 @@
 interface Country {
     name: string;
     code: string;
-    population: number;
+    population?: number;
 }
 
 const countryA: Country = {
     name: "India",
     code: "IN",
-    population: 1_352_642_280,
+   // population: 1_352_642_280, this has become optional adding ? to the Coutry.pupulation an ?, optional operator
 };
 
 const countryB: Country = {
@@ -32,7 +32,7 @@ const countryC: Country = {
 // This will cause a type error. Remove the code that now has a type error.
 
 type Currency = {
-    name: string;
+   readonly name: string;
     code: string;
     symbol: string;
 };
@@ -43,7 +43,6 @@ const currencyData: Currency = {
     symbol: "€",
 };
 
-currencyData.name = "Gold";
 
 currencyData.code = "GGG";
 
