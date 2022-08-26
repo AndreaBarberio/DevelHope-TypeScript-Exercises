@@ -8,7 +8,8 @@
 // Hint: Use the string values in the `currency` properties as the enum members.
 
 enum Currency {
-
+"euro",
+"dollar"
 }
 
 // Update the type for the `currency` property in this interface to use
@@ -16,7 +17,7 @@ enum Currency {
 
 interface Country {
     name: string;
-    currency: string;
+    currency: Currency;
 }
 
 // Replace the string values for the `currency` properties below with
@@ -24,28 +25,32 @@ interface Country {
 const countries: Country[] = [
     {
         name: "France",
-        currency: "Euro",
+        currency: Currency.euro,
     },
     {
         name: "United States of America",
-        currency: "Dollar",
+        currency: Currency.dollar,
     },
     {
         name: "Italy",
-        currency: "Euro",
+        currency: Currency.euro,
     },
     {
         name: "New Zealand",
-        currency: "Dollar",
+        currency:Currency.dollar,
     },
 ];
 
 // Create a string enum named `LanguageStatus`. Use it to replace the
 // string values for the `status` properties in the objects below.
 
+enum LanguageStatus {
+    Primary = "primary",
+    Secondary = "Secondary"
+}
 const countryLanguages = [
-    { language: "Spanish", status: "primary" },
-    { language: "English", status: "secondary" },
+    { language: "Spanish", status: LanguageStatus.Primary },
+    { language: "English", status: LanguageStatus.Secondary },
 ];
 
 // ----

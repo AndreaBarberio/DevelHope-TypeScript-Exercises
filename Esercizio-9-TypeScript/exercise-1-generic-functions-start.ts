@@ -6,13 +6,15 @@
 // This should fix the type errors on Line 13 and 15.
 // Hint: The type for the `value` function parameter should use a type variable.
 
-function identity(value) {
-    return value;
-}
+const identity = <Type>(value: Type):Type => value;
 
-let value1 = identity<string>("France");
 
-let value2 = identity<number>(67_413_000);
+let value1 = identity("France");
+
+let value2 = identity(67_413_000);
+
+console.log(value1, value2);
+
 
 // ----
 
@@ -27,10 +29,11 @@ interface User {
     name: string;
 }
 
+
 // Pass the `User` type as a type argument to the generic `fetchData()` function.
 // This should fix the type error on Line 35.
 
-let user = await fetchData("http://api.com/user/1");
+let user = await fetchData<User>("http://api.com/user/1");
 
 console.log(user.name);
 
